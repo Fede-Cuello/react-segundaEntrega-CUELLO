@@ -1,0 +1,38 @@
+.navBarContainer {
+  background-color: #0D1B2A;
+  padding: 0.75rem 1.5rem;
+}
+
+.navBarContainer .navBarBrand {
+  color: #FFFFFF;
+  font-weight: 700;
+  font-size: 1.8rem;
+}
+
+.navBarContainer .navBarBrand:hover {
+  color: #3282B8;
+  transition: color 0.3s ease;
+}
+
+.navBarLink {
+  color: #FFFFFF;
+  font-weight: 500;
+  margin-right: 1rem;
+  transition: color 0.3s ease;
+}
+
+.navBarLink:hover,
+.navBarLink:focus {
+  color: #3282B8;
+}
+
+.navBarContainer .navBarDropdownItem:hover {
+  background-color: #3282B8;
+  transition: color 0.3s ease;
+}
+
+  
+  
+  
+  
+  

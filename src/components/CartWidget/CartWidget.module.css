@@ -1,0 +1,22 @@
+.cartWidget {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+  }
+  
+  .cartWidget:hover {
+    color: #3282B8
+  }
+  
+  .cartWidget svg {
+    font-size: 24px;
+    transition: color 0.3s ease;
+  }
+  
+  .cartWidget:hover svg {
+    color: #3282B8
+  }
+  

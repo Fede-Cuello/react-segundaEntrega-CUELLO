@@ -1,0 +1,32 @@
+
+  .itemCard {
+    border-radius: 10px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    background-color: #fff;
+  }
+  
+  .itemCard:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+ 
+
+  .itemCard .itemCardTitle{
+    font-weight: 700;
+    color: #0b4281;
+  }
+  
+  
+  .itemCard .itemCardText {
+    color: #0b4281;
+    font-weight: 500;
+    
+  }
+
+  .itemCard .medidasText {
+    white-space: pre-line;
+  }
+  
+  

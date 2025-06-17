@@ -1,14 +1,20 @@
-
-import './App.css'
-import NavBar from './components/NavBar'
+import NavBar from './components/NavBar/NavBar'
 import ItemListContainer from './components/ItemListContainer'
+import { BrowserRouter, Routes, Route, Link, NavLink } from "react-router"
+import ItemDetailContainer from './components/ItemDetailContainer'
 
 function App() {
 
   return (
     <>
-      <NavBar />
-      <ItemListContainer text='Tenemos el smartphone ideal para vos! Contamos con modelos nuevos y usados en excelente estado' />
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<ItemListContainer />} />
+          <Route path="/category/:categoriaElegida" element={<ItemListContainer />} />
+          <Route path="/item/:sku" element={<ItemDetailContainer/>} />
+        </Routes>
+      </BrowserRouter>
     </>
   )
 }
