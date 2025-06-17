@@ -5,7 +5,7 @@ import styles from "./ItemDetail.module.css"
 
 export default function ItemDetail({producto}) {
     return (
-      <Container>
+      <Container className="mt-4">
         <Row className="justify-content-center">
           <Col xs={12} sm={10} md={8} lg={6}>
             <Card className="text-center">
@@ -28,16 +28,16 @@ export default function ItemDetail({producto}) {
                 <Card.Text className={styles.description}>
                   {producto?.data.description}
                 </Card.Text>
-
-                <h5 className={`mt-3 ${styles.price}`}>
-                  Precio: ${producto?.data.price}
-                </h5>
-
-                <ItemCount />
+                <div className={styles.priceAndCount}>
+                  <h5 className={`mt-3 ${styles.price}`}>
+                    Precio: ${producto?.data.price}
+                  </h5>
+                  <ItemCount />
+                </div>
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
-    )
+    );
 }

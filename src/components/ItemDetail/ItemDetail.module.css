@@ -21,3 +21,11 @@
     object-fit: cover;
     border-radius: 10px 10px 0 0;
   }
+
+  .priceAndCount {
+    display: flex;
+    align-items: center;      
+    justify-content: center;
+    gap: 1rem;            
+    margin-top: 1rem;
+  }
