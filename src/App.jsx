@@ -15,10 +15,7 @@ function App() {
         <ToastContainer position="top-right" autoClose={5000} />
         <Routes>
           <Route path="/" element={<ItemListContainer />} />
-          <Route
-            path="/category/:categoriaElegida"
-            element={<ItemListContainer />}
-          />
+          <Route path="/category/:categoriaElegida" element={<ItemListContainer />}/>
           <Route path="/item/:id" element={<ItemDetailContainer />} />
           <Route path="/cart" element={<CartContainer />} />
           <Route path="/checkout" element={<Checkout />} />
