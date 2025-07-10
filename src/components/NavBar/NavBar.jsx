@@ -4,23 +4,20 @@ import styles from "./NavBar.module.css"
 import { useEffect, useState } from "react"
 import { NavLink } from "react-router"
 import { useNavigate } from "react-router"
+import { getCategorias } from "../../firebase/db"
 
 
 export default function NavBar() {
 
   const [categorias, setCategorias] = useState([])
-  const navigate = useNavigate()
-  useEffect(() => {
-    fetch("https://furniture-api.fly.dev/v1/products?limit=100")
-    .then(res => res.json())
-    .then(data => {
-      const catUnicas = [
-        ...new Set(data.data.map((prod) => prod.category))
-      ]
-      setCategorias(catUnicas)
   
+  useEffect(() => {
+    const obtenerCategorias = async () => {
+      const categorias = await getCategorias()
+      setCategorias(categorias)
+    };
 
-      })
+    obtenerCategorias()
   }, [])
 
   return (
@@ -38,7 +35,7 @@ export default function NavBar() {
           <Nav className="ms-auto">
             <NavDropdown
               title={<span className={styles.navBarLink}
-              onClick={() => navigate("/")}>Categorias</span>}
+              >Categorias</span>}
               id="productos-dropdown">
               {categorias.map(categoria => (
                 <NavDropdown.Item as={NavLink} to={`/category/${categoria}`} className={styles.navBarDropdownItem} key={categoria}>
@@ -55,5 +52,5 @@ export default function NavBar() {
         </Navbar.Collapse>
       </Container>
     </Navbar>
-  );
+  )
 }

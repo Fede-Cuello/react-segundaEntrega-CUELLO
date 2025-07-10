@@ -1,12 +1,95 @@
-# React + Vite
+# E-commerce App con React y Firebase
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Este proyecto es una tienda online desarrollada con **React** y **Vite**. Permite mostrar productos, filtrarlos por categorías, agregarlos a un carrito, realizar una compra y guardar la orden en **Firebase Firestore**.
 
-Currently, two official plugins are available:
+## 🚀 Funcionalidades principales
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+- Mostrar productos desde la base de datos en Firebase Firestore
+- Filtrar productos por categoría
+- Ver detalle de cada producto
+- Agregar productos al carrito (con manejo de cantidades)
+- Impedir que se agreguen cantidades negativas (se desactiva el botón de restar al llegar a 1)
+- Vaciar el carrito o finalizar compra
+- Generar una orden de compra y guardarla en Firebase
+- Cuando el carrito está vacío, se muestran botones para volver al inicio y ocultar opciones innecesarias
+- Indicadores de carga usando HOC y Spinner
+- Notificaciones con `react-toastify`
 
-## Expanding the ESLint configuration
+## 📂 Estructura del proyecto
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+```bash
+src/
+│
+├── components/
+│   ├── CartWidget/
+│   ├── Item/
+│   ├── ItemDetail/
+│   ├── NavBar/
+│   └── (cada uno con su módulo CSS)
+│
+├── CartContainer.jsx
+├── CartDetail.jsx
+├── Checkout.jsx
+├── ItemCount.jsx
+├── ItemDetailContainer.jsx
+├── ItemList.jsx
+├── ItemListContainer.jsx
+│
+├── context/
+│   ├── CartContext.jsx
+│   └── CartProvider.jsx
+│
+├── firebase/
+│   ├── config.js
+│   └── db.js
+│
+├── hoc/
+│   ├── withLoading.jsx
+│   └── withLoadingDetail.jsx
+│
+└── App.jsx
+```
+
+## 📦 Dependencias utilizadas
+
+### 🔧 Estilos
+
+- [Bootstrap](https://getbootstrap.com/) – Componentes y sistema de grillas
+- CSS Modules – Estilado encapsulado por componente
+
+### 🌐 Routing
+
+- [React Router](https://reactrouter.com/en/main) – Rutas dinámicas y navegación
+
+### ☁️ Backend y base de datos
+
+- [Firebase](https://firebase.google.com/) – Firestore Database (productos y órdenes)
+
+### 🔔 Notificaciones
+
+- [React Toastify](https://fkhadra.github.io/react-toastify/introduction) – Alertas personalizadas para agregar productos, confirmar compra, etc.
+- [SweetAlert2](https://sweetalert2.github.io/) – Ventanas emergentes para confirmaciones y advertencias (como vaciar el carrito)
+
+## ✅ Buenas prácticas implementadas
+
+- Uso de hooks (`useState`, `useEffect`, `useContext`)
+- Manejo de estado global con Context API (en el carrito)
+- Reutilización de lógica con HOC (`withLoading` y `withLoadingDetail`)
+- Validaciones en el contador para evitar cantidades negativas
+- Mensajes informativos con `toast.success()`
+- Mostrar botones condicionales cuando el carrito está vacío
+- Separación de responsabilidades entre componentes y lógica
+- Código modular y mantenible
+
+---
+
+💡 Este proyecto es ideal como base para una tienda online, y puede ampliarse con autenticación, métodos de pago o panel de administración.
+
+
+## 👤 Autor
+
+**Federico Cuello**  
+Técnico Mecatrónico y estudiante de Desarrollo Web Full Stack  
+[LinkedIn](https://www.linkedin.com/in/federico-cuello-a233632b4/)
+
+

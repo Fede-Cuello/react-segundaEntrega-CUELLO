@@ -3,7 +3,7 @@ import ItemCount from "../ItemCount"
 import styles from "./ItemDetail.module.css"
 
 
-export default function ItemDetail({producto}) {
+export default function ItemDetail({item}) {
     return (
       <Container className="mt-4">
         <Row className="justify-content-center">
@@ -11,33 +11,29 @@ export default function ItemDetail({producto}) {
             <Card className="text-center">
               <Card.Img
                 variant="top"
-                src={producto?.data.image_path}
-                alt={producto?.data.name}
+                src={item?.imagen}
+                alt={item?.nombre}
                 className={styles.image}
               />
               <Card.Header className={styles.title}>
-                {producto?.data.name}
+                {item?.nombre}
               </Card.Header>
               <Card.Body>
+                
                 <Card.Text className={styles.description}>
-                  Madera: {producto?.data.wood_type}
+                  {item?.descripcion}
                 </Card.Text>
-                <Card.Text className={styles.description}>
-                  Terminacion: {producto?.data.finish}
-                </Card.Text>
-                <Card.Text className={styles.description}>
-                  {producto?.data.description}
-                </Card.Text>
+                <h5 className={styles.price}>
+                    Precio: ${item?.precio}
+                </h5>
                 <div className={styles.priceAndCount}>
-                  <h5 className={`mt-3 ${styles.price}`}>
-                    Precio: ${producto?.data.price}
-                  </h5>
-                  <ItemCount />
+                  
+                  <ItemCount item={item} />
                 </div>
               </Card.Body>
             </Card>
           </Col>
         </Row>
       </Container>
-    );
+    )
 }
