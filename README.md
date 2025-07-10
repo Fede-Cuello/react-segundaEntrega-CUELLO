@@ -13,7 +13,7 @@ Este proyecto es una tienda online desarrollada con **React** y **Vite**. Permit
 - Generar una orden de compra y guardarla en Firebase
 - Cuando el carrito está vacío, se muestran botones para volver al inicio y ocultar opciones innecesarias
 - Indicadores de carga usando HOC y Spinner
-- Notificaciones con `react-toastify`
+- Notificaciones con `react-toastify` y `Sweet Alert`
 
 ## 📂 Estructura del proyecto
 
